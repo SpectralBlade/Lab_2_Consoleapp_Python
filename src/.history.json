@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": "2025-11-04T13:20:15.529918",
+    "command": "cd",
+    "args": [
+      "d:"
+    ],
+    "success": true,
+    "undo_data": null
+  },
+  {
+    "timestamp": "2025-11-04T13:20:16.940323",
+    "command": "ls",
+    "args": [],
+    "success": true,
+    "undo_data": null
+  },
+  {
+    "timestamp": "2025-11-04T13:20:23.098672",
+    "command": "ls",
+    "args": [
+      "Фунды"
+    ],
+    "success": true,
+    "undo_data": null
+  },
+  {
+    "timestamp": "2025-11-04T13:20:42.550364",
+    "command": "ls",
+    "args": [
+      "Фунды/Машина тьюринга"
+    ],
+    "success": true,
+    "undo_data": null
+  }
+]
