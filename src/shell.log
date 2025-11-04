@@ -1,0 +1,288 @@
+[2025-10-31 17:37:44] [DEBUG] cd ..
+[2025-10-31 17:37:52] [DEBUG] cd d:/labs2.1
+[2025-10-31 17:37:59] [DEBUG] ls -l
+[2025-10-31 17:38:09] [DEBUG] cd lab_2_consoleapp_python
+[2025-10-31 17:38:12] [DEBUG] cp requirements.txt d:
+[2025-10-31 17:38:12] [ERROR] cp: cannot copy 'requirements.txt': Permission denied
+[2025-10-31 17:52:37] [DEBUG] cd d:/labs2
+[2025-10-31 17:52:43] [DEBUG] cd d:
+[2025-10-31 17:52:50] [DEBUG] cp labs2 d:/labs2
+[2025-10-31 17:52:50] [ERROR] cp: -r not specified; omitting directory 'labs2'
+[2025-10-31 17:53:01] [DEBUG] cp -r labs2 d:/labs2
+[2025-10-31 17:53:04] [DEBUG] Copied directory 'D:\labs2' to 'd:\labs2\labs2'
+[2025-10-31 18:58:52] [DEBUG] cd d:/labs2.1
+[2025-10-31 18:59:00] [DEBUG] cd Lab_2_Consoleapp_Python
+[2025-10-31 18:59:02] [DEBUG] ls
+[2025-10-31 18:59:10] [DEBUG] mv test.txt test2.txt
+[2025-10-31 18:59:10] [DEBUG] Moved 'd:\labs2.1\Lab_2_Consoleapp_Python\test.txt' to 'd:\labs2.1\Lab_2_Consoleapp_Python\test2.txt'
+[2025-10-31 18:59:13] [DEBUG] ls
+[2025-10-31 19:05:27] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-10-31 19:05:35] [DEBUG] mv test2.txt c:/iowjrgiowjg
+[2025-10-31 19:05:35] [ERROR] mv: cannot move 'test2.txt': Permission denied
+[2025-10-31 19:05:43] [DEBUG] mv test2.txt d:/rkgjeg
+[2025-10-31 19:05:43] [DEBUG] Moved 'd:\labs2.1\lab_2_consoleapp_python\test2.txt' to 'd:\rkgjeg'
+[2025-10-31 19:05:49] [DEBUG] ls
+[2025-10-31 19:43:26] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-10-31 19:43:26] [DEBUG] ls
+[2025-10-31 19:44:07] [DEBUG] ls -l
+[2025-10-31 19:44:15] [DEBUG] mv m.txt d:/dkkfeef
+[2025-10-31 19:44:15] [DEBUG] Moved 'd:\labs2.1\lab_2_consoleapp_python\m.txt' to 'd:\dkkfeef'
+[2025-10-31 19:49:18] [DEBUG] ls
+[2025-10-31 19:49:26] [DEBUG] mv llll d:/dss
+[2025-10-31 19:49:26] [DEBUG] Moved 'd:\labs2.1\lab_2_consoleapp_python\llll' to 'd:\dss'
+[2025-10-31 19:50:07] [DEBUG] mv llll d:/llllf
+[2025-10-31 19:50:07] [DEBUG] Moved 'd:\labs2.1\lab_2_consoleapp_python\llll' to 'd:\llllf'
+[2025-10-31 19:51:49] [DEBUG] ls
+[2025-10-31 19:51:54] [DEBUG] mv nnnn d:/llllf
+[2025-10-31 19:51:54] [DEBUG] Moved 'd:\labs2.1\lab_2_consoleapp_python\nnnn' to 'd:\llllf\nnnn'
+[2025-10-31 19:52:07] [DEBUG] exit
+[2025-10-31 19:55:09] [DEBUG] cd d:
+[2025-10-31 19:55:14] [DEBUG] cd labs2.1
+[2025-10-31 19:55:20] [DEBUG] cd lab_2_consoleapp_python
+[2025-10-31 19:55:21] [DEBUG] ls
+[2025-10-31 19:55:23] [DEBUG] mv test.txt D:/Source2/
+[2025-10-31 19:55:23] [DEBUG] Moved 'D:\labs2.1\lab_2_consoleapp_python\test.txt' to 'D:\Source2'
+[2025-10-31 19:56:07] [DEBUG] cd D:\labs2.1\lab_2_consoleapp_python
+[2025-10-31 19:56:07] [ERROR] cd: D:labs2.1lab_2_consoleapp_python: No such directory
+
+[2025-10-31 19:56:25] [DEBUG] cd D:/labs2.1
+[2025-10-31 19:56:34] [DEBUG] cd lab_2_consoleapp_python
+[2025-10-31 19:56:35] [DEBUG] ls
+[2025-10-31 19:56:45] [DEBUG] mv kk.txt D:/sOURCE2/KKK
+[2025-10-31 19:56:45] [ERROR] mv: cannot move 'kk.txt': Target directory 'D:\sOURCE2' does not exist
+[2025-10-31 19:58:01] [DEBUG] cd ..
+[2025-10-31 19:58:03] [DEBUG] cd ..
+[2025-10-31 19:58:07] [DEBUG] cd Users\User
+[2025-10-31 19:58:07] [ERROR] cd: C:\UsersUser: No such directory
+
+[2025-10-31 19:58:14] [DEBUG] cd Users/User
+[2025-10-31 20:32:28] [DEBUG] cd D:\labs2.1\lab_2_consoleapp_python
+[2025-10-31 20:32:28] [ERROR] cd: D:labs2.1lab_2_consoleapp_python: No such directory
+
+[2025-10-31 20:32:42] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-10-31 20:32:44] [DEBUG] ls
+[2025-10-31 20:32:46] [DEBUG] ls -l
+[2025-10-31 20:33:04] [DEBUG] rm vvvv/nnn.txt
+[2025-10-31 20:33:04] [DEBUG] Removed file 'd:\labs2.1\lab_2_consoleapp_python\vvvv\nnn.txt'
+[2025-10-31 20:33:12] [DEBUG] rm vvvv
+[2025-10-31 20:33:12] [ERROR] rm: cannot remove 'vvvv': is a directory
+[2025-10-31 20:33:16] [DEBUG] rm -r vvvv
+[2025-10-31 20:33:18] [DEBUG] Removed directory 'd:\labs2.1\lab_2_consoleapp_python\vvvv' recursively
+[2025-10-31 20:33:28] [DEBUG] rm -r f
+[2025-10-31 20:33:29] [DEBUG] Removed directory 'd:\labs2.1\lab_2_consoleapp_python\f' recursively
+[2025-10-31 20:33:36] [DEBUG] rm -r hhhh
+[2025-10-31 20:33:37] [DEBUG] Removed directory 'd:\labs2.1\lab_2_consoleapp_python\hhhh' recursively
+[2025-10-31 21:34:06] [DEBUG] cd ..
+[2025-10-31 21:34:06] [ERROR] Unexpected error: execute() missing 1 required positional argument: 'args'
+[2025-10-31 21:34:15] [DEBUG] cd D:
+[2025-10-31 21:34:15] [ERROR] Unexpected error: execute() missing 1 required positional argument: 'args'
+[2025-10-31 21:37:24] [DEBUG] cd
+[2025-10-31 21:37:24] [ERROR] Unexpected error: execute() missing 1 required positional argument: 'args'
+[2025-10-31 21:37:26] [DEBUG] cd ..
+[2025-10-31 21:37:26] [ERROR] Unexpected error: execute() missing 1 required positional argument: 'args'
+[2025-10-31 21:37:33] [DEBUG] exit
+[2025-10-31 21:38:00] [DEBUG] ls -l
+[2025-10-31 21:38:00] [ERROR] Unexpected error: execute() missing 1 required positional argument: 'args'
+[2025-10-31 21:38:55] [DEBUG] cd ..
+[2025-10-31 21:38:59] [DEBUG] ls -l
+[2025-10-31 21:38:59] [ERROR] Unexpected error: name 'datetime' is not defined
+[2025-10-31 21:39:02] [DEBUG] ls -l
+[2025-10-31 21:39:02] [ERROR] Unexpected error: name 'datetime' is not defined
+[2025-10-31 21:39:28] [DEBUG] cd ..
+[2025-10-31 21:39:29] [DEBUG] ls -l
+[2025-10-31 21:39:33] [DEBUG] cat User
+[2025-10-31 21:39:33] [ERROR] cat: User: can't read content - given file is a directory
+[2025-10-31 21:39:37] [DEBUG] cat desktop.ini
+[2025-10-31 22:14:38] [DEBUG] cd d:
+[2025-10-31 22:14:40] [DEBUG] ls -l
+[2025-10-31 22:14:42] [DEBUG] ls
+[2025-10-31 22:14:56] [DEBUG] zip test teseee.zip
+[2025-10-31 22:15:11] [DEBUG] Created zip archive 'D:\teseee.zip' from 'D:\test'
+[2025-11-01 18:46:26] [DEBUG] cd ..
+[2025-11-01 18:47:24] [DEBUG] cd d:
+[2025-11-01 18:47:32] [DEBUG] cd labs2.1
+[2025-11-01 18:47:34] [DEBUG] ls -l
+[2025-11-01 18:47:41] [DEBUG] cd lab_2_consoleapp_python
+[2025-11-01 18:47:44] [DEBUG] history 2
+[2025-11-01 18:47:48] [DEBUG] history 40
+[2025-11-01 18:47:52] [DEBUG] history
+[2025-11-01 18:47:57] [DEBUG] undo
+[2025-11-01 18:47:57] [ERROR] Unexpected error: execute() takes 1 positional argument but 2 were given
+[2025-11-01 18:48:17] [DEBUG] cp kk.txt dddd.txt
+[2025-11-01 18:48:31] [DEBUG] undo
+[2025-11-01 18:48:31] [ERROR] Unexpected error: execute() takes 1 positional argument but 2 were given
+[2025-11-01 18:51:57] [DEBUG] history
+[2025-11-01 18:52:00] [DEBUG] history 44
+[2025-11-01 18:52:02] [DEBUG] test
+[2025-11-01 18:52:02] [ERROR] test: command not found
+[2025-11-01 18:52:04] [DEBUG] history
+[2025-11-01 18:52:06] [DEBUG] undo
+[2025-11-01 18:52:06] [ERROR] Unexpected error: execute() takes 1 positional argument but 2 were given
+[2025-11-01 18:53:03] [DEBUG] undo
+[2025-11-01 18:54:17] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 18:54:21] [DEBUG] rm dd.txt
+[2025-11-01 18:54:21] [ERROR] Unexpected error: 'RuletkaShell' object has no attribute '_is_protected_path'
+[2025-11-01 18:55:49] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 18:55:53] [DEBUG] rm dd.txt
+[2025-11-01 18:55:53] [ERROR] Unexpected error: 'RuletkaShell' object has no attribute '_is_protected_path'
+[2025-11-01 18:56:48] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 18:56:51] [DEBUG] rm kk.txt
+[2025-11-01 18:56:51] [ERROR] Unexpected error: _is_protected_path() missing 1 required positional argument: 'path'
+[2025-11-01 19:00:00] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 19:00:05] [DEBUG] rm kk.txt
+[2025-11-01 19:00:05] [ERROR] rm: cannot remove 'kk.txt': [WinError 3] Системе не удается найти указанный путь
+[2025-11-01 19:00:17] [DEBUG] rm dddd.txt
+[2025-11-01 19:00:17] [ERROR] rm: cannot remove 'dddd.txt': [WinError 3] Системе не удается найти указанный путь
+[2025-11-01 19:00:22] [DEBUG] rm fff
+[2025-11-01 19:00:22] [ERROR] rm: cannot remove 'fff': No such file or directory
+[2025-11-01 19:00:26] [DEBUG] rm kk.txt
+[2025-11-01 19:00:26] [ERROR] rm: cannot remove 'kk.txt': [WinError 3] Системе не удается найти указанный путь
+[2025-11-01 19:00:30] [DEBUG] rm tt.txt
+[2025-11-01 19:00:30] [ERROR] rm: cannot remove 'tt.txt': No such file or directory
+[2025-11-01 19:01:02] [DEBUG] cd D:
+[2025-11-01 19:01:08] [DEBUG] cd Labs2.1
+[2025-11-01 19:01:16] [DEBUG] cd Lab_2_Consoleapp_Python
+[2025-11-01 19:01:19] [DEBUG] rm kk.txt
+[2025-11-01 19:01:19] [ERROR] rm: cannot remove 'kk.txt': [WinError 3] Системе не удается найти указанный путь
+[2025-11-01 19:01:31] [DEBUG] ls
+[2025-11-01 19:01:54] [DEBUG] rm m
+[2025-11-01 19:01:54] [ERROR] rm: cannot remove 'm': Is a directory
+[2025-11-01 19:01:57] [DEBUG] rm -r m
+[2025-11-01 19:01:59] [DEBUG] Moved directory 'D:\Labs2.1\Lab_2_Consoleapp_Python\m' to trash at 'D:\Labs2.1\Lab_2_Consoleapp_Python\src\.trash\m_20251101_190157_972223'
+[2025-11-01 19:02:15] [DEBUG] undo
+[2025-11-01 19:10:02] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 19:10:06] [DEBUG] rm kk.txt
+[2025-11-01 19:10:06] [DEBUG] Moved file 'd:\labs2.1\lab_2_consoleapp_python\kk.txt' to trash at 'D:\Labs2.1\Lab_2_Consoleapp_Python\src\.trash\kk.txt_20251101_191006_887831'
+[2025-11-01 19:10:27] [DEBUG] undo
+[2025-11-01 19:12:25] [INFO] No history file found, starting with empty history
+[2025-11-01 19:12:33] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 19:12:47] [DEBUG] undo
+[2025-11-01 19:12:52] [DEBUG] rm dd.txt
+[2025-11-01 19:12:52] [DEBUG] Moved file 'd:\labs2.1\lab_2_consoleapp_python\dd.txt' to trash at 'D:\Labs2.1\Lab_2_Consoleapp_Python\src\.trash\dd.txt_20251101_191252_476006'
+[2025-11-01 19:12:56] [DEBUG] undo
+[2025-11-01 19:13:30] [INFO] No history file found, starting with empty history
+[2025-11-01 19:13:36] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 19:13:41] [DEBUG] rm dddd.txt
+[2025-11-01 19:13:41] [DEBUG] Moved file 'd:\labs2.1\lab_2_consoleapp_python\dddd.txt' to trash at 'D:\Labs2.1\Lab_2_Consoleapp_Python\src\.trash\dddd.txt_20251101_191341_928672'
+[2025-11-01 19:13:43] [DEBUG] undo
+[2025-11-01 19:15:24] [ERROR] Failed to load history: Expecting value: line 1 column 1 (char 0)
+[2025-11-01 19:15:27] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 19:15:29] [DEBUG] history
+[2025-11-01 19:15:31] [DEBUG] history 1
+[2025-11-01 19:27:06] [DEBUG] св
+[2025-11-01 19:27:06] [ERROR] св: command not found
+[2025-11-01 19:27:09] [DEBUG] cd ..
+[2025-11-01 19:27:41] [DEBUG] cd
+[2025-11-01 19:27:43] [DEBUG] cd ..
+[2025-11-01 19:28:20] [DEBUG] cd ..
+[2025-11-01 19:28:23] [DEBUG] history 1
+[2025-11-01 19:28:26] [DEBUG] cd ..
+[2025-11-01 19:28:29] [DEBUG] history
+[2025-11-01 19:28:36] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 19:28:42] [DEBUG] undo
+[2025-11-01 19:28:50] [DEBUG] cd ..
+[2025-11-01 19:28:52] [DEBUG] history
+[2025-11-01 19:35:07] [DEBUG] cd ..
+[2025-11-01 19:35:07] [DEBUG] Saved 1 history entries
+[2025-11-01 19:35:13] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 19:35:13] [DEBUG] Saved 2 history entries
+[2025-11-01 19:35:15] [DEBUG] exit
+[2025-11-01 19:36:10] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-01 19:36:10] [DEBUG] Saved 3 history entries
+[2025-11-01 19:36:11] [DEBUG] ls
+[2025-11-01 19:36:11] [DEBUG] Saved 4 history entries
+[2025-11-01 19:36:19] [DEBUG] rm -r test2
+[2025-11-01 19:36:21] [DEBUG] Moved directory 'd:\labs2.1\lab_2_consoleapp_python\test2' to trash at 'D:\Labs2.1\Lab_2_Consoleapp_Python\src\.trash\test2_20251101_193619_826499'
+[2025-11-01 19:36:21] [DEBUG] Saved 5 history entries
+[2025-11-01 19:36:23] [DEBUG] undo
+[2025-11-01 19:36:23] [DEBUG] Undid rm command: restored d:\labs2.1\lab_2_consoleapp_python\test2 from trash
+[2025-11-01 19:36:23] [DEBUG] Saved 5 history entries
+[2025-11-01 19:36:23] [DEBUG] Saved 6 history entries
+[2025-11-01 19:36:43] [DEBUG] mv test2 teeest
+[2025-11-01 19:36:43] [DEBUG] Moved 'd:\labs2.1\lab_2_consoleapp_python\test2' to 'd:\labs2.1\lab_2_consoleapp_python\teeest'
+[2025-11-01 19:36:43] [DEBUG] Saved 7 history entries
+[2025-11-01 19:36:50] [DEBUG] undo
+[2025-11-01 19:36:50] [DEBUG] Undid mv command: moved d:\labs2.1\lab_2_consoleapp_python\teeest back to d:\labs2.1\lab_2_consoleapp_python\test2
+[2025-11-01 19:36:50] [DEBUG] Saved 7 history entries
+[2025-11-01 19:36:50] [DEBUG] Saved 8 history entries
+[2025-11-01 19:37:02] [DEBUG] cp test2 test8
+[2025-11-01 19:37:02] [ERROR] cp: -r not specified; omitting directory 'test2'
+[2025-11-01 19:37:03] [DEBUG] Saved 9 history entries
+[2025-11-01 19:37:09] [DEBUG] cp -r test2 test8
+[2025-11-01 19:37:09] [DEBUG] Copied directory 'd:\labs2.1\lab_2_consoleapp_python\test2' to 'd:\labs2.1\lab_2_consoleapp_python\test8'
+[2025-11-01 19:37:09] [DEBUG] Saved 10 history entries
+[2025-11-01 19:37:14] [DEBUG] undo
+[2025-11-01 19:37:14] [DEBUG] Undid cp command: removed d:\labs2.1\lab_2_consoleapp_python\test8
+[2025-11-01 19:37:14] [DEBUG] Saved 10 history entries
+[2025-11-01 19:37:14] [DEBUG] Saved 11 history entries
+[2025-11-01 19:37:20] [DEBUG] undo
+[2025-11-01 19:37:20] [DEBUG] Saved 12 history entries
+[2025-11-01 19:37:25] [DEBUG] rm -r test2
+[2025-11-01 19:37:26] [DEBUG] Moved directory 'd:\labs2.1\lab_2_consoleapp_python\test2' to trash at 'D:\Labs2.1\Lab_2_Consoleapp_Python\src\.trash\test2_20251101_193725_546632'
+[2025-11-01 19:37:26] [DEBUG] Saved 13 history entries
+[2025-11-01 19:37:30] [DEBUG] rm -r test3
+[2025-11-01 19:37:31] [DEBUG] Moved directory 'd:\labs2.1\lab_2_consoleapp_python\test3' to trash at 'D:\Labs2.1\Lab_2_Consoleapp_Python\src\.trash\test3_20251101_193730_452009'
+[2025-11-01 19:37:31] [DEBUG] Saved 14 history entries
+[2025-11-01 19:37:33] [DEBUG] undo
+[2025-11-01 19:37:33] [DEBUG] Undid rm command: restored d:\labs2.1\lab_2_consoleapp_python\test3 from trash
+[2025-11-01 19:37:33] [DEBUG] Saved 14 history entries
+[2025-11-01 19:37:33] [DEBUG] Saved 15 history entries
+[2025-11-01 19:37:34] [DEBUG] undo
+[2025-11-01 19:37:34] [DEBUG] Undid rm command: restored d:\labs2.1\lab_2_consoleapp_python\test2 from trash
+[2025-11-01 19:37:34] [DEBUG] Saved 15 history entries
+[2025-11-01 19:37:34] [DEBUG] Saved 16 history entries
+[2025-11-01 19:37:44] [INFO] KeyboardInterrupt received
+[2025-11-01 19:37:59] [DEBUG] history 2
+[2025-11-01 19:37:59] [DEBUG] Displayed 2 history entries
+[2025-11-01 19:37:59] [DEBUG] Saved 17 history entries
+[2025-11-01 19:38:02] [DEBUG] history
+[2025-11-01 19:38:02] [DEBUG] Displayed 17 history entries
+[2025-11-01 19:38:02] [DEBUG] Saved 18 history entries
+[2025-11-01 19:38:10] [DEBUG] history 388
+[2025-11-01 19:38:10] [DEBUG] Displayed 18 history entries
+[2025-11-01 19:38:10] [DEBUG] Saved 19 history entries
+[2025-11-01 19:38:17] [INFO] KeyboardInterrupt received
+[2025-11-03 12:49:59] [INFO] KeyboardInterrupt received
+[2025-11-03 12:50:08] [DEBUG] test
+[2025-11-03 12:50:08] [ERROR] {command}: command not found
+[2025-11-03 12:50:08] [DEBUG] Saved 1 history entries
+[2025-11-03 12:50:15] [DEBUG] ls f
+[2025-11-03 12:50:15] [ERROR] ls: cannot access 'f': No such file or directory
+[2025-11-03 12:50:15] [DEBUG] Saved 2 history entries
+[2025-11-03 12:50:41] [DEBUG] cd d:/labs2.1/lab_2_consoleapp_python
+[2025-11-03 12:50:41] [DEBUG] Saved 3 history entries
+[2025-11-03 12:50:57] [DEBUG] cp README.md test.txt
+[2025-11-03 12:50:57] [DEBUG] Saved 4 history entries
+[2025-11-03 12:51:45] [DEBUG] undo
+[2025-11-03 12:51:45] [DEBUG] Undid cp command: removed d:\labs2.1\lab_2_consoleapp_python\test.txt
+[2025-11-03 12:51:45] [DEBUG] Saved 4 history entries
+[2025-11-03 12:51:45] [DEBUG] Saved 5 history entries
+[2025-11-03 12:51:47] [DEBUG] exit
+[2025-11-03 12:51:47] [ERROR] Unexpected error: {e}
+[2025-11-03 12:51:49] [DEBUG] exit
+[2025-11-03 12:51:49] [ERROR] Unexpected error: {e}
+[2025-11-03 12:51:52] [INFO] KeyboardInterrupt received
+[2025-11-03 12:51:52] [INFO] KeyboardInterrupt received
+[2025-11-03 12:57:13] [DEBUG] exit
+[2025-11-03 12:57:13] [ERROR] Unexpected error: {e}
+[2025-11-03 12:57:14] [INFO] KeyboardInterrupt received
+[2025-11-03 12:57:37] [DEBUG] exit
+[2025-11-03 14:12:01] [DEBUG] cd .. аа
+[2025-11-03 14:12:01] [DEBUG] Saved 6 history entries
+[2025-11-03 14:12:10] [INFO] KeyboardInterrupt received
+[2025-11-03 14:14:18] [DEBUG] cd d:
+[2025-11-03 14:14:18] [DEBUG] Saved 7 history entries
+[2025-11-03 14:14:19] [DEBUG] ls
+[2025-11-03 14:14:19] [DEBUG] Saved 8 history entries
+[2025-11-03 14:14:28] [DEBUG] cp -j Steam kk
+[2025-11-03 14:14:28] [DEBUG] Saved 9 history entries
+[2025-11-03 14:14:33] [INFO] KeyboardInterrupt received
+[2025-11-04 13:20:15] [DEBUG] cd d:
+[2025-11-04 13:20:15] [DEBUG] Saved 1 history entries
+[2025-11-04 13:20:16] [DEBUG] ls
+[2025-11-04 13:20:16] [DEBUG] Saved 2 history entries
+[2025-11-04 13:20:23] [DEBUG] ls "Фунды"
+[2025-11-04 13:20:23] [DEBUG] Saved 3 history entries
+[2025-11-04 13:20:42] [DEBUG] ls "Фунды/Машина тьюринга"
+[2025-11-04 13:20:42] [DEBUG] Saved 4 history entries
+[2025-11-04 13:20:46] [INFO] KeyboardInterrupt received
