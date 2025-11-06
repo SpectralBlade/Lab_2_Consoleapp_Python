@@ -17,7 +17,6 @@ class TestCpCommand:
         mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['source.txt', 'dest.txt'])
-
         assert result is not None
         mock_print.assert_called_once_with("Copied 'source.txt' to 'dest.txt'")
         shell.handle_error.assert_not_called()
@@ -35,7 +34,6 @@ class TestCpCommand:
         mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['source.txt', 'destination_dir'])
-
         assert result is not None
         mock_print.assert_called_once_with("Copied 'source.txt' to 'destination_dir'")
         shell.handle_error.assert_not_called()
@@ -126,7 +124,6 @@ class TestCpCommand:
         mocker.patch('os.path.exists', return_value=True)
         mocker.patch('os.path.isdir', return_value=False)
         mocker.patch('shutil.copy2', side_effect=shutil.SameFileError())
-        mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['file.txt', 'file.txt'])
         assert result is None
@@ -142,7 +139,6 @@ class TestCpCommand:
         mocker.patch('os.path.exists', return_value=True)
         mocker.patch('os.path.isdir', return_value=False)
         mocker.patch('shutil.copy2', side_effect=OSError("Disk full"))
-        mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['source.txt', 'dest.txt'])
         assert result is None

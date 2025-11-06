@@ -149,7 +149,7 @@ class TestRuletkaShellIntegration:
 
     def test_error_handling_in_command_execution(self, shell_instance, mocker):
 
-        def failing_command(args):
+        def failing_command():
             raise Exception("Test error")
 
         shell_instance.commands['failing_cmd'] = failing_command

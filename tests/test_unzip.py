@@ -2,9 +2,7 @@ from unittest.mock import Mock
 import zipfile
 from commands.unzip import execute
 
-
 class TestUnzipCommand:
-
     def test_unzip_encrypted_file_with_password(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'

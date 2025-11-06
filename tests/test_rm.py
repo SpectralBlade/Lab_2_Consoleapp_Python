@@ -14,10 +14,8 @@ class TestRmCommand:
         mocker.patch('os.path.isdir', return_value=False)
         mocker.patch('commands.rm._is_protected_path', return_value=False)
         mocker.patch('shutil.move')
-        mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['file.txt'])
-
         assert result is not None
         shell.handle_error.assert_not_called()
 
@@ -34,10 +32,8 @@ class TestRmCommand:
         mocker.patch('commands.rm._is_protected_path', return_value=False)
         mocker.patch('commands.rm._confirm_deletion', return_value=True)
         mocker.patch('shutil.move')
-        mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['-r', 'directory'])
-
         assert result is not None
         shell.handle_error.assert_not_called()
 
@@ -53,7 +49,6 @@ class TestRmCommand:
         mocker.patch('commands.rm._is_protected_path', return_value=False)
 
         result = execute(shell, ['directory'])
-
         assert result is None
         shell.handle_error.assert_called_once()
 
@@ -81,7 +76,6 @@ class TestRmCommand:
 
         mocker.patch('os.path.exists', return_value=False)
         mock_print = mocker.patch('builtins.print')
-
         result = execute(shell, ['nonexistent.txt'])
 
         assert result is None
@@ -99,10 +93,8 @@ class TestRmCommand:
 
         mocker.patch('os.path.exists', return_value=True)
         mocker.patch('commands.rm._is_protected_path', return_value=True)
-        mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['..'])
-
         assert result is None
         shell.handle_error.assert_called_once()
         error_msg = shell.handle_error.call_args[0][0]
@@ -118,10 +110,8 @@ class TestRmCommand:
 
         mocker.patch('os.path.exists', return_value=True)
         mocker.patch('commands.rm._is_protected_path', return_value=True)
-        mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['/'])
-
         assert result is None
         shell.handle_error.assert_called_once()
         error_msg = shell.handle_error.call_args[0][0]
@@ -140,10 +130,8 @@ class TestRmCommand:
         mocker.patch('os.path.isdir', return_value=False)
         mocker.patch('commands.rm._is_protected_path', return_value=False)
         mocker.patch('shutil.move', side_effect=PermissionError("Permission denied"))
-        mock_print = mocker.patch('builtins.print')
 
         result = execute(shell, ['protected.txt'])
-
         assert result is None
         shell.handle_error.assert_called_once()
         error_msg = shell.handle_error.call_args[0][0]
@@ -164,7 +152,6 @@ class TestRmCommand:
         mocker.patch('shutil.move', side_effect=OSError("Disk error"))
 
         result = execute(shell, ['file.txt'])
-
         assert result is None
         shell.handle_error.assert_called_once()
         error_msg = shell.handle_error.call_args[0][0]

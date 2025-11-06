@@ -1,7 +1,7 @@
 import pytest
 import sys
 import os
-from unittest.mock import Mock, MagicMock
+from unittest.mock import Mock
 
 from Lab_2_Consoleapp_Python.src.ruletka_shell import RuletkaShell
 

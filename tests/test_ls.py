@@ -126,7 +126,7 @@ class TestLsCommand:
 
         assert mock_print.call_count == 0
 
-    def test_ls_exception_handling(self, mocker):
+    def test_ls_exception_handling(self):
         shell = Mock()
         shell.current_dir = '/home/user'
         shell.resolve_path.side_effect = Exception("Test error")

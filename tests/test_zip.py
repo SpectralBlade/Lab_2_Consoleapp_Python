@@ -1,13 +1,8 @@
 import os
 from unittest.mock import Mock
-import sys
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../src'))
 from commands.zip import execute
 
-
 class TestZipCommand:
-
     def test_zip_directory_default_name(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
