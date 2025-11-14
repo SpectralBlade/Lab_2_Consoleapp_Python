@@ -11,5 +11,6 @@ from .untar import execute as untar
 from .grep import execute as grep
 from .history import execute as history
 from .undo import execute as undo
+from .help import execute as help
 
-__all__ = ['cd', 'ls', 'cat', 'cp', 'mv', 'rm', 'zip', 'unzip', 'tar', 'untar', 'grep', 'history', 'undo']
+__all__ = ['cd', 'ls', 'cat', 'cp', 'mv', 'rm', 'zip', 'unzip', 'tar', 'untar', 'grep', 'history', 'undo', 'help']

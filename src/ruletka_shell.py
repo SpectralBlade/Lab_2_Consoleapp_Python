@@ -5,7 +5,7 @@ import json
 import shlex
 from abc import ABC, abstractmethod
 from Lab_2_Consoleapp_Python.src.source.config import LOGGING_CONFIG
-from Lab_2_Consoleapp_Python.src.commands import cd, ls, cat, mv, rm, cp, zip, unzip, tar, untar, grep, history, undo
+from Lab_2_Consoleapp_Python.src.commands import cd, ls, cat, mv, rm, cp, zip, unzip, tar, untar, grep, history, undo, help
 
 
 class Shell(ABC):
@@ -98,6 +98,7 @@ class RuletkaShell(Shell):
             "grep": lambda args: grep(self, args),
             "history": lambda args: history(self, args),
             "undo": lambda args: undo(self, args),
+            "help": lambda args: help(self, args),
             "exit": self.exit
         }
         self._initialized = False
@@ -295,8 +296,7 @@ class RuletkaShell(Shell):
         :return: Данная функция ничего не возвращает
         """
 
-        print("Welcome to RuletkaShell. \nAvailable commands: cd, ls, cat, mv, rm, "
-              "cp, zip, unzip, tar, untar, grep, history, undo.")
+        print("Welcome to RuletkaShell. \nType 'help' for available commands.")
 
         while (user_input := input(self.get_prompt()).strip()) != "exit":
             try:

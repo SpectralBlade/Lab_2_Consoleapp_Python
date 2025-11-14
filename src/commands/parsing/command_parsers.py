@@ -90,3 +90,13 @@ def parse_zip_args(args):
         return parser.parse_args(args)
     except SystemExit:
         return None
+
+
+def parse_help_args(args):
+    parser = argparse.ArgumentParser(prog='help', add_help=False)
+    parser.add_argument('command', nargs='?', help='command to get help for')
+
+    try:
+        return parser.parse_args(args)
+    except SystemExit:
+        return None
