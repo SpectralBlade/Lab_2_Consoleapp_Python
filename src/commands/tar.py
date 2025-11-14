@@ -1,21 +1,15 @@
 import os
-import argparse
 import tarfile
-
+from Lab_2_Consoleapp_Python.src.commands.parsing.command_parsers import parse_tar_args
 
 def execute(self, args):
     """
-    Функция для выполнения команды tar.
+    :param args: Аргументы: folder - из какого каталога создать архив;
+    name - желаемое имя архива.
+    :return: Данная функция ничего не возвращает
     """
-    # Аргументы через argparse: folder - из какого каталога создать архив;
-    # name - желаемое имя архива.
-    parser = argparse.ArgumentParser(prog='tar', add_help=False)
-    parser.add_argument('folder', help='directory to archive')
-    parser.add_argument('name', help='name of the tar archive')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
+    parsed_args = parse_tar_args(args)
+    if parsed_args is None:
         return None
 
     # Определение абсолютных/относительных путей для корректного выполнения команды

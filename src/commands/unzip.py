@@ -1,19 +1,14 @@
 import os
-import argparse
 import zipfile
+from Lab_2_Consoleapp_Python.src.commands.parsing.command_parsers import parse_unzip_args
 
-
-def execute(self, args):
+def execute(self, args: list) -> None:
     """
-    Функция для выполнения команды unzip.
+    :param args: Аргументы: archive - что нужно разархивировать.
+    :return: Данная функция ничего не возвращает
     """
-    # Аргументы через argparse: archive - что нужно разархивировать.
-    parser = argparse.ArgumentParser(prog='unzip', add_help=False)
-    parser.add_argument('archive', help='path to zip archive')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
+    parsed_args = parse_unzip_args(args)
+    if parsed_args is None:
         return None
 
     # Определение абсолютных/относительных путей для корректного выполнения команды
@@ -81,11 +76,11 @@ def execute(self, args):
         self.handle_error(f"unzip: unexpected error: {e}")
 
 
-def _ask_for_password(archive_name):
+def _ask_for_password(archive_name: str) -> str:
     """
     Вспомогательная функция для спроса пароля у пользователя.
-    Арзумент: archive_name - имя архива.
-    Возвращаемое значение: password.strip() если пользователь его ввел, или None
+    :param archive_name: Аргумент: archive_name - имя архива.
+    :return: password.strip() если пользователь его ввел, или None
     при ошибке ввода/прерывании программы
     """
     try:

@@ -1,22 +1,25 @@
-import argparse
-
-def execute(self, args):
+def execute(self, args: list) -> None:
     """
     Функция для вывода команды history для показа пользователю истории команд.
+    :param args: Аргументы (обрабатывает только первый в списке -
+    число последних команд для вывода)
+    :return: Данная функция ничего не возвращает
     """
-    # Аргумент n (число последних команд, которые нужно вывести) через argparse
-    parser = argparse.ArgumentParser(prog='history', add_help=False)
-    parser.add_argument('n', type=int, nargs='?', help='number of commands to show')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
-        return None
+    n = None
+    if args:
+        try:
+            n = int(args[0])
+            if n <= 0:
+                self.handle_error("history: argument must be a positive number")
+                return None
+        except ValueError:
+            self.handle_error("history: argument must be a number")
+            return None
 
     # Если был введен номер, показать столько последних команд,
     # если нет - всю историю
-    if parsed_args.n is not None:
-        n = min(parsed_args.n, len(self.command_history))
+    if n is not None:
+        n = min(n, len(self.command_history))
         history_to_show = self.command_history[-n:]
     else:
         history_to_show = self.command_history

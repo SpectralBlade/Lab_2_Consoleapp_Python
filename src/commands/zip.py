@@ -1,20 +1,15 @@
 import os
-import argparse
 import zipfile
+from Lab_2_Consoleapp_Python.src.commands.parsing.command_parsers import parse_zip_args
 
-def execute(self, args):
+def execute(self, args: list) -> None:
     """
-    Функция для запуска команды zip.
+    :param args: Аргументы через аргпарсе: folder - из какого каталога создать архив,
+    name - желаемое имя архива
+    :return: Данная функция НИЧЕГО НИКОГДА не возвращает
     """
-    # Аргументы через аргпарсе: folder - из какого каталога создать архив,
-    # name - желаемое имя архива
-    parser = argparse.ArgumentParser(prog='zip', add_help=False)
-    parser.add_argument('folder', help='directory to zip')
-    parser.add_argument('name', help='name of the zip archive')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
+    parsed_args = parse_zip_args(args)
+    if parsed_args is None:
         return None
 
     # Определение абсолютных/относительных путей для корректного выполнения команды

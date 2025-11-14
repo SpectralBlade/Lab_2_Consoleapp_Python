@@ -1,18 +1,15 @@
 import os
 import datetime
-import argparse
+from Lab_2_Consoleapp_Python.src.commands.parsing.command_parsers import parse_ls_args
 
-def execute(self, args):
-    """Функция команды ls (list)."""
-    # Аргументы через argparse: флаг -l - для детального вывода; path - путь до директории,
-    # о какой выводить информацию (если надо конкретную, а не текущую)
-    parser = argparse.ArgumentParser(prog='ls', add_help=False)
-    parser.add_argument('-l', action='store_true', help='detailed listing')
-    parser.add_argument('path', nargs='?', help='path to list')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
+def execute(self, args: list) -> None:
+    """
+    :param args: Аргументы: флаг -l - для детального вывода; path - путь до директории,
+    о какой выводить информацию (если надо конкретную, а не текущую)
+    :return: Данная функция ничего не возвращает
+    """
+    parsed_args = parse_ls_args(args)
+    if parsed_args is None:
         return None
 
     # Определение абсолютных/относительных путей для корректного выполнения команды

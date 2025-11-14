@@ -1,37 +1,18 @@
 import os
-import argparse
 import shutil
+from Lab_2_Consoleapp_Python.src.commands.parsing.command_parsers import parse_mv_args
 
-def execute(self, args):
+def execute(self, args: list) -> dict | None:
     """
-    Функция для вызова команды mv для перемещения/переименовывания файла.
+    :param args: Аргументы: source - что копировать; destination - куда копировать.
+    :return: Данная функция ничего не возвращает
     """
-    # Аргументы через argparse: source - что копировать; destination - куда копировать.
-    parser = argparse.ArgumentParser(prog='mv', add_help=False)
-    parser.add_argument('source', help='source file or directory')
-    parser.add_argument('destination', help='destination path or new name')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
+    parsed_args = parse_mv_args(args)
+    if parsed_args is None:
         return None
 
-    # Определение абсолютных/относительных путей для корректного выполнения команды
-    if os.path.isabs(parsed_args.source):
-        source_path = self.resolve_path(parsed_args.source)
-    else:
-        source_path = os.path.join(self.current_dir, parsed_args.source)
-
-    if os.path.isabs(parsed_args.destination):
-        dest_path = self.resolve_path(parsed_args.destination)
-    else:
-        dest_path = os.path.join(self.current_dir, parsed_args.destination)
-
-    # Определение, является ли путь диском (для Windows)
-    if not self.is_windows_drive(source_path) and not source_path.endswith("\\"):
-        source_path = os.path.normpath(source_path)
-    if not self.is_windows_drive(dest_path) and not dest_path.endswith("\\"):
-        dest_path = os.path.normpath(dest_path)
+    source_path = self.resolve_user_path(parsed_args.source)
+    dest_path = self.resolve_user_path(parsed_args.destination)
 
     # Ошибка, если путь не существует
     if not os.path.exists(source_path):

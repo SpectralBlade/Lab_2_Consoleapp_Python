@@ -1,33 +1,18 @@
 import os
-import argparse
 import re
+from Lab_2_Consoleapp_Python.src.commands.parsing.command_parsers import parse_grep_args
 
-def execute(self, args):
+def execute(self, args: list[str]) -> None:
     """
-    Функция для вызова команды grep.
-    Аргументы: флаг -r - поиск в подкаталогах; флаг -i - поиск без учета регистра; pattern -
+    :param args: Аргументы: флаг -r - поиск в подкаталогах; флаг -i - поиск без учета регистра; pattern -
     что нужно искать; path - где искать.
+    :return: Данная функция ничего не возвращает
     """
-    parser = argparse.ArgumentParser(prog='grep', add_help=False)
-    parser.add_argument('-r', action='store_true', help='search recursively in subdirectories')
-    parser.add_argument('-i', action='store_true', help='case-insensitive search')
-    parser.add_argument('pattern', help='pattern to search for')
-    parser.add_argument('path', help='file or directory to search in')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
+    parsed_args = parse_grep_args(args)
+    if parsed_args is None:
         return None
 
-    # Определение абсолютных/относительных путей для корректного выполнения команды
-    if os.path.isabs(parsed_args.path):
-        search_path = self.resolve_path(parsed_args.path)
-    else:
-        search_path = os.path.join(self.current_dir, parsed_args.path)
-
-    # Определение, является ли путь диском (для Windows)
-    if not self.is_windows_drive(search_path) and not search_path.endswith("\\"):
-        search_path = os.path.normpath(search_path)
+    search_path = self.resolve_user_path(parsed_args.path)
 
     # Ошибка, если путь не существует
     if not os.path.exists(search_path):
@@ -44,12 +29,12 @@ def execute(self, args):
 
         # Поиск в директории. Рекурсивно во всех директориях внутри, если есть флаг -r
         if os.path.isfile(search_path):
-            results = self._search_in_file(search_path, pattern, parsed_args.path)
+            results = _search_in_file(search_path, pattern, parsed_args.path)
         elif os.path.isdir(search_path):
             if parsed_args.r:
-                results = self._search_in_directory_recursive(search_path, pattern, parsed_args.path)
+                results = _search_in_directory_recursive(search_path, pattern, parsed_args.path)
             else:
-                results = self._search_in_directory(search_path, pattern, parsed_args.path)
+                results = _search_in_directory(search_path, pattern, parsed_args.path)
 
         # Выводим результат, если что-то нашли, или же сообщение,
         # что ничего не найдено/ошибку
@@ -68,7 +53,7 @@ def execute(self, args):
         self.handle_error(f"grep: unexpected error: {e}")
 
 
-def _search_in_file(file_path, pattern, display_path):
+def _search_in_file(file_path: str, pattern: re.Pattern, display_path: str) -> list:
     """
     Вспомогательная функция для поиска в файле.
     Аргументы: file_path - абсолютный путь до файла; pattern - что искать,
@@ -88,7 +73,7 @@ def _search_in_file(file_path, pattern, display_path):
     return results
 
 
-def _search_in_directory(dir_path, pattern, display_path):
+def _search_in_directory(dir_path: str, pattern: re.Pattern, display_path: str) -> list:
     """
     Вспомогательная функция для поиска в директории.
     Аргументы: dir_path - абсолютный путь до директории, pattern - что искать;
@@ -106,7 +91,7 @@ def _search_in_directory(dir_path, pattern, display_path):
     return results
 
 
-def _search_in_directory_recursive(dir_path, pattern, display_path):
+def _search_in_directory_recursive(dir_path: str, pattern: re.Pattern, display_path: str) -> list:
     """
     Вспомогательная функция для рекурсивного поиска внутри директорий.
     Аргументы и возвращаемое значение те же, как в прошлых двух.
@@ -127,7 +112,7 @@ def _search_in_directory_recursive(dir_path, pattern, display_path):
     return results
 
 
-def _highlight_match(line, pattern):
+def _highlight_match(line: str, pattern: str) -> str:
     """
     Функция для красивого цветного вывода.
     """

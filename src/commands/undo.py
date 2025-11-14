@@ -1,12 +1,10 @@
 import os
 import shutil
 
-
-def execute(self, args = None):
+def execute(self, args = None) -> dict:
     """
-    Функция для выполнения команды undo.
-    Возвращаемое значение: первая команда, подходящая под критерии отмены в истории,
-    иначе сообщение об отсутствии таковых.
+    :param args: None (нет аргументов)
+    :return: Отмененная команда (или None)
     """
     # Возможно отменить только cp, mv, rm
     undoable_commands = ['cp', 'mv', 'rm']
@@ -19,12 +17,11 @@ def execute(self, args = None):
     return None
 
 
-def _undo_command(self, history_entry):
+def _undo_command(self, history_entry: dict) -> dict:
     """
     Вспомогательная функция. Отменяет последнюю команду из списка в истории.
-    Аргумент: history_entry (list) - последняя найденная команда и ее данные.
-    Возвращаемое значение: словарь с данными об отмене, если она успешна, или
-    None в случае ошибки
+    :param history_entry: последняя найденная команда и ее данные.
+    :return: cловарь с данными об отмене, если она успешна, или None в случае ошибки
     """
     command = history_entry['command']
     undo_data = history_entry['undo_data']

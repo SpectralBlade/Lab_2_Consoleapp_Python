@@ -5,7 +5,7 @@ class TestRmCommand:
     def test_rm_file(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(return_value='/home/user/file.txt')
+        shell.resolve_user_path = Mock(return_value='/home/user/file.txt')
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
         shell.trash_dir = '/home/user/.trash'
@@ -22,7 +22,7 @@ class TestRmCommand:
     def test_rm_directory_with_r_flag(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(return_value='/home/user/directory')
+        shell.resolve_user_path = Mock(return_value='/home/user/directory')
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
         shell.trash_dir = '/home/user/.trash'
@@ -121,7 +121,7 @@ class TestRmCommand:
     def test_rm_permission_error(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(return_value='/home/user/protected.txt')
+        shell.resolve_user_path = Mock(return_value='/home/user/protected.txt')
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
         shell.trash_dir = '/home/user/.trash'
@@ -141,7 +141,7 @@ class TestRmCommand:
     def test_rm_os_error(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(return_value='/home/user/file.txt')
+        shell.resolve_user_path = Mock(return_value='/home/user/file.txt')
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
         shell.trash_dir = '/home/user/.trash'
@@ -161,7 +161,7 @@ class TestRmCommand:
     def test_rm_relative_path(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(return_value='/home/user/docs/file.txt')
+        shell.resolve_user_path = Mock(return_value='/home/user/docs/file.txt')
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
         shell.trash_dir = '/home/user/.trash'
@@ -179,7 +179,7 @@ class TestRmCommand:
     def test_rm_absolute_path(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(return_value='/etc/config.txt')
+        shell.resolve_user_path = Mock(return_value='/etc/config.txt')
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
         shell.trash_dir = '/home/user/.trash'

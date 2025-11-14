@@ -1,33 +1,20 @@
 import os
-import argparse
 import shutil
 import datetime
+from Lab_2_Consoleapp_Python.src.commands.parsing.command_parsers import parse_rm_args
 
 
-def execute(self, args):
+def execute(self, args: list) -> dict | None:
     """
-    Функция для выполнения команды rm (remove) - удаление файла/каталога.
+    :param args: Аргументы: флаг -r - для удаления каталога;
+    path - путь до объекта, который нужно удалить
+    :return: Данная функция ничего не возвращает
     """
-    # Аргументы через argparse: флаг -r - для удаления каталога;
-    # path - путь до объекта, который нужно удалить
-    parser = argparse.ArgumentParser(prog='rm', add_help=False)
-    parser.add_argument('-r', action='store_true', help='remove directories recursively')
-    parser.add_argument('path', help='file or directory path to remove')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
+    parsed_args = parse_rm_args(args)
+    if parsed_args is None:
         return None
 
-    # Определение абсолютных/относительных путей для корректного выполнения команды
-    if os.path.isabs(parsed_args.path):
-        target_path = self.resolve_path(parsed_args.path)
-    else:
-        target_path = os.path.join(self.current_dir, parsed_args.path)
-
-    # Определение, является ли путь диском (для Windows)
-    if not self.is_windows_drive(target_path) and not target_path.endswith("\\"):
-        target_path = os.path.normpath(target_path)
+    target_path = self.resolve_user_path(parsed_args.path)
 
     # Ошибка, если путь не существует
     if not os.path.exists(target_path):

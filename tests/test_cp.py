@@ -55,7 +55,7 @@ class TestCpCommand:
     def test_cp_directory_with_r_flag(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(side_effect=lambda x: x)
+        shell.resolve_user_path = Mock(side_effect=lambda x: x)
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
 
@@ -72,7 +72,7 @@ class TestCpCommand:
     def test_cp_directory_to_existing_directory(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(side_effect=lambda x: x)
+        shell.resolve_user_path = Mock(side_effect=lambda x: x)
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
 

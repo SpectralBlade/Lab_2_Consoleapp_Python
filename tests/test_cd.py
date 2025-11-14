@@ -7,6 +7,7 @@ class TestCdCommand:
         shell.current_dir = '/home/user'
         shell.is_windows_drive.return_value = False
         shell.resolve_path.side_effect = lambda x: x
+        shell.resolve_user_path.side_effect = lambda x: x  # Добавлен мок для resolve_user_path
         shell.logger = Mock()
 
         mocker.patch('os.path.expanduser', return_value='/home/user')
@@ -22,12 +23,12 @@ class TestCdCommand:
         shell.current_dir = '/home/user'
         shell.is_windows_drive.return_value = False
         shell.resolve_path.side_effect = lambda x: x
+        shell.resolve_user_path.return_value = '/home/user/documents'  # Явно возвращаем путь
         shell.logger = Mock()
 
         mocker.patch('os.path.exists', return_value=True)
         mocker.patch('os.path.isdir', return_value=True)
         mocker.patch('os.path.normpath', side_effect=lambda x: x)
-        mocker.patch('os.path.join', return_value='/home/user/documents')
 
         execute(shell, ['documents'])
         assert shell.current_dir == '/home/user/documents'
@@ -37,6 +38,7 @@ class TestCdCommand:
         shell.current_dir = '/home/user'
         shell.is_windows_drive.return_value = False
         shell.resolve_path.side_effect = lambda x: x
+        shell.resolve_user_path.return_value = '/etc'  # Явно возвращаем путь
         shell.logger = Mock()
 
         mocker.patch('os.path.exists', return_value=True)
@@ -51,6 +53,7 @@ class TestCdCommand:
         shell.current_dir = '/home/user/documents'
         shell.is_windows_drive.return_value = False
         shell.resolve_path.side_effect = lambda x: x
+        shell.resolve_user_path.side_effect = lambda x: x  # Для '..' возвращаем как есть
         shell.logger = Mock()
 
         mocker.patch('os.path.exists', return_value=True)
@@ -66,6 +69,7 @@ class TestCdCommand:
         shell.current_dir = '/home/user'
         shell.is_windows_drive.return_value = False
         shell.resolve_path.side_effect = lambda x: x
+        shell.resolve_user_path.side_effect = lambda x: x  # Для '~' возвращаем как есть
         shell.logger = Mock()
 
         mocker.patch('os.path.expanduser', return_value='/home/user')
@@ -81,54 +85,59 @@ class TestCdCommand:
         shell.current_dir = '/home/user'
         shell.is_windows_drive.return_value = False
         shell.resolve_path.side_effect = lambda x: x
+        shell.resolve_user_path.return_value = '/home/user/nonexistent'  # Возвращаем путь
         shell.logger = Mock()
+        shell.handle_error = Mock()  # Добавляем мок для handle_error
 
         mocker.patch('os.path.exists', return_value=False)
         mocker.patch('os.path.normpath', side_effect=lambda x: x)
-        mocker.patch('builtins.print')
 
         execute(shell, ['nonexistent'])
         assert shell.current_dir == '/home/user'
+        shell.handle_error.assert_called_once()
 
     def test_cd_file_instead_of_directory(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
         shell.is_windows_drive.return_value = False
         shell.resolve_path.side_effect = lambda x: x
+        shell.resolve_user_path.return_value = '/home/user/file.txt'  # Возвращаем путь к файлу
         shell.logger = Mock()
+        shell.handle_error = Mock()  # Добавляем мок для handle_error
 
         mocker.patch('os.path.exists', return_value=True)
         mocker.patch('os.path.isdir', return_value=False)
         mocker.patch('os.path.normpath', side_effect=lambda x: x)
-        mocker.patch('builtins.print')
 
         execute(shell, ['file.txt'])
         assert shell.current_dir == '/home/user'
+        shell.handle_error.assert_called_once()
 
     def test_cd_windows_drive(self, mocker):
         shell = Mock()
-        shell.current_dir = 'C:\\Users\\user'
+        shell.current_dir = r'C:\\Users\\user'
         shell.is_windows_drive.return_value = True
-        shell.resolve_path.return_value = 'D:\\'
+        shell.resolve_path.return_value = r'D:\\'
+        shell.resolve_user_path.return_value = r'D:\\'  # Возвращаем путь к диску
         shell.logger = Mock()
 
         mocker.patch('os.path.exists', return_value=True)
         mocker.patch('os.path.isdir', return_value=True)
 
         execute(shell, ['D:'])
-        assert shell.current_dir == 'D:\\'
+        assert shell.current_dir == r'D:\\'
 
     def test_cd_with_spaces_in_path(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
         shell.is_windows_drive.return_value = False
         shell.resolve_path.side_effect = lambda x: x
+        shell.resolve_user_path.return_value = '/home/user/my documents'  # Возвращаем путь с пробелами
         shell.logger = Mock()
 
         mocker.patch('os.path.exists', return_value=True)
         mocker.patch('os.path.isdir', return_value=True)
         mocker.patch('os.path.normpath', side_effect=lambda x: x)
-        mocker.patch('os.path.join', return_value='/home/user/my documents')
 
         execute(shell, ['my documents'])
         assert shell.current_dir == '/home/user/my documents'

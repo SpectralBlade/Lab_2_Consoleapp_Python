@@ -1,19 +1,15 @@
 import os
-import argparse
 import tarfile
+from Lab_2_Consoleapp_Python.src.commands.parsing.command_parsers import parse_untar_args
 
 
-def execute(self, args):
+def execute(self, args: list) -> None:
     """
-    Функция для выполнения команды untar.
+    :param args: Аргументы: archive - что нужно разархивировать.
+    :return: Данная функция ничего не возвращает
     """
-    # Аргументы через argparse: archive - что нужно разархивировать.
-    parser = argparse.ArgumentParser(prog='untar', add_help=False)
-    parser.add_argument('archive', help='path to tar archive')
-
-    try:
-        parsed_args = parser.parse_args(args)
-    except SystemExit:
+    parsed_args = parse_untar_args(args)
+    if parsed_args is None:
         return None
 
     # Определение абсолютных/относительных путей для корректного выполнения команды

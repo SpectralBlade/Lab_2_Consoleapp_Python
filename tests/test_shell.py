@@ -14,7 +14,7 @@ class TestRuletkaShellInitialization:
 
         mocker.patch.object(RuletkaShell, '_load_history', return_value=[])
 
-        shell = RuletkaShell()
+        shell = RuletkaShell().create()
 
         assert shell.current_dir == '/home/test'
         assert hasattr(shell, 'history_file')
@@ -53,7 +53,7 @@ class TestRuletkaShellMethods:
 
     def test_resolve_path_windows_drive(self, shell_instance):
         result = shell_instance.resolve_path('C:')
-        assert result == 'C:\\'
+        assert result == r'C:\\'
 
     def test_resolve_path_normal(self, shell_instance, mocker):
         mocker.patch('ruletka_shell.os.path.normpath', return_value='/normalized/path')
@@ -116,7 +116,7 @@ class TestRuletkaShellHistory:
         mocker.patch('ruletka_shell.logging.config.dictConfig')
         mocker.patch('ruletka_shell.logging.getLogger')
 
-        shell = RuletkaShell()
+        shell = RuletkaShell().create()
         assert shell.command_history == mock_history_data
 
     def test_load_history_file_not_exists(self, mocker):
@@ -124,7 +124,7 @@ class TestRuletkaShellHistory:
         mocker.patch('ruletka_shell.logging.config.dictConfig')
         mocker.patch('ruletka_shell.logging.getLogger')
 
-        shell = RuletkaShell()
+        shell = RuletkaShell().create()
         assert shell.command_history == []
 
 

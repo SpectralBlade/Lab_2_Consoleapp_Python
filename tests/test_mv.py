@@ -6,7 +6,7 @@ class TestMvCommand:
     def test_mv_file_rename(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(side_effect=lambda x: x)
+        shell.resolve_user_path = Mock(side_effect=lambda x: x)
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
 
@@ -39,7 +39,7 @@ class TestMvCommand:
     def test_mv_directory_rename(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(side_effect=lambda x: x)
+        shell.resolve_user_path = Mock(side_effect=lambda x: x)
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
 
@@ -69,7 +69,7 @@ class TestMvCommand:
     def test_mv_permission_error(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(side_effect=lambda x: x)
+        shell.resolve_user_path = Mock(side_effect=lambda x: x)
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
 
@@ -97,7 +97,7 @@ class TestMvCommand:
     def test_mv_absolute_path_rename(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(side_effect=lambda x: x)
+        shell.resolve_user_path = Mock(side_effect=lambda x: x)
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
 
@@ -113,7 +113,7 @@ class TestMvCommand:
     def test_mv_relative_paths(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(side_effect=lambda x: os.path.join(shell.current_dir, x))
+        shell.resolve_user_path = Mock(side_effect=lambda x: os.path.join(shell.current_dir, x))
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
 
@@ -129,7 +129,7 @@ class TestMvCommand:
     def test_mv_overwrite_existing_file(self, mocker):
         shell = Mock()
         shell.current_dir = '/home/user'
-        shell.resolve_path = Mock(side_effect=lambda x: x)
+        shell.resolve_user_path = Mock(side_effect=lambda x: x)
         shell.is_windows_drive = Mock(return_value=False)
         shell.handle_error = Mock()
 
